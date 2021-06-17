@@ -1,0 +1,35 @@
+<div class="container" >
+  <button mat-button class="bg-blue-300 text-blue-800" (click)="onCreate()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <br>
+  <app-poll-create *ngIf="showform"></app-poll-create>
+  <br>
+  <div *ngFor="let item of data | async">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ item.thumbnail }}" alt="{{ item.question }}">
+      <mat-card-content>
+        <p>
+          {{ item.question }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>10 votes</button>
+        <button mat-button [disabled]="item.voted">Voted</button>
+      </mat-card-actions>
+    </mat-card>
+    <app-poll-vote 
+    [option]="item.options" 
+    [question]="item.question"
+    [id]="item.id"
+    ></app-poll-vote>
+    <br>
+  </div>
+
+  <div id="apexchart"></div>
+</div>

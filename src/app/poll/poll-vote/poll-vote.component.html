@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-card>
+    <h1 mat-dialog-title>Poll Vote</h1>
+
+    <form fxLayout="column" fxLayoutGap="10px" [formGroup]="form" (ngSubmit)="onSave()">
+
+      <div>
+        <label> {{ question }} </label>
+        <br><br>
+        <mat-radio-group formControlName="selected"  fxLayout="column" fxLayoutGap="1rem">
+          <mat-radio-button *ngFor="let item of option;let i = index" [value]="i">{{ item }}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+
+      <button mat-stroked-button color="primary" type="submit" [disabled]="form.invalid">Save Vote</button>
+    </form>
+  </mat-card>
+</div>

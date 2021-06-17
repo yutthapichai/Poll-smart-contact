@@ -1,0 +1,40 @@
+
+<div class="container">
+  <mat-card>
+    <h1 mat-dialog-title>Poll Create</h1>
+  
+    <form fxLayout="column" fxLayoutGap="10px" [formGroup]="form" (ngSubmit)="onSave()">
+      <mat-form-field appearance="fill">
+        <mat-label>Question</mat-label>
+        <input matInput formControlName="question">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="image">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Option 1</mat-label>
+        <input matInput formControlName="option1">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Option 2</mat-label>
+        <input matInput formControlName="option2">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Option 3</mat-label>
+        <input matInput formControlName="option3">
+      </mat-form-field>
+  
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Detail</mat-label>
+        <textarea matInput formControlName="detail"></textarea>
+      </mat-form-field> -->
+  
+      <button mat-stroked-button color="primary" type="submit">Save</button>
+    </form>
+  </mat-card>
+</div>
